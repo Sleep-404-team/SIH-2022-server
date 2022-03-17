@@ -3,7 +3,7 @@ const router = express.Router();
 const { getInternships, addInternship } = require("./controller");
 
 router.get("/", async (req, res) => {
-  const result = await getInternships();
+  const result = await getInternships(req.query);
   res.send(result);
 });
 
