@@ -17,6 +17,9 @@ app.use(cors(corsOpts));
 app.use(express.json());
 
 app.use("/api/v1", require("./src/api"));
+app.use("/", (req, res) => {
+  res.send("SW-F03");
+});
 
 app.listen(PORT, (err) =>
   err ? console.log(err) : console.log(`Listening on Port: ${PORT}`)
