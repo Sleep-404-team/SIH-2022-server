@@ -24,6 +24,15 @@ exports.getInternships = async (query) => {
   return result;
 };
 
+exports.getInternshipsID = async (Id) => {
+  try {
+    const data = (await db()).collection("internships").findOne({ Id: Id });
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 exports.addInternship = async (data) => {
   try {
     const data = (await db()).collection("internships").insertOne(data);
